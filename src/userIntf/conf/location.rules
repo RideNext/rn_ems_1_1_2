@@ -53,7 +53,7 @@ location ~ ^/(faultcurrent-v7|faultlog-v7|commentalarms|ackalarms|clearalarms|au
     proxy_pass http://persistence:9200;
 }
 
-location ~ ^/(realms|admin)/ {
+location ~ ^/(realms|admin|auth)/ {
     proxy_pass https://identity:8463;
 }
 location /proxyapi/ {
