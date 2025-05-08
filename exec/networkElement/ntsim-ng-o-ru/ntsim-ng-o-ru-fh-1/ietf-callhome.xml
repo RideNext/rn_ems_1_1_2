@@ -1,0 +1,885 @@
+<nacm xmlns="urn:ietf:params:xml:ns:yang:ietf-netconf-acm">
+  <enable-nacm>true</enable-nacm>
+  <groups>
+    <group>
+      <name>sudo</name>
+      <user-name>netconf</user-name>
+    </group>
+  </groups>
+  <rule-list>
+    <name>sudo-rules</name>
+    <group>sudo</group>
+    <rule>
+      <name>allow-all-sudo</name>
+      <module-name>*</module-name>
+      <path>/</path>
+      <access-operations>*</access-operations>
+      <action>permit</action>
+      <comment>Corresponds all the rules under the sudo group as defined in O-RAN.WG4.MP.0-v05.00</comment>
+    </rule>
+  </rule-list>
+</nacm>
+<keystore xmlns="urn:ietf:params:xml:ns:yang:ietf-keystore">
+  <asymmetric-keys>
+    <asymmetric-key>
+      <name>melacon_server_key</name>
+      <algorithm>rsa2048</algorithm>
+      <private-key>MIIEpAIBAAKCAQEAv+l101cLBF6/qw0eEG/wAlFzGVSb0VcaKh9h2K/+G1azhtNM
+g2a4F2s7pyw+dCpGlS3Ntrs6WkC8/+Xm7d5S0ibxYMjdNke9Kn+iYQpmNSKsZg6+
+0TDu3WhweNjmDYH4OM0nhmhc55xIQwGq/RTjZ6JlgmUp1SK5TDLW4WA8HsAuXCP4
+rpQezkFR8LrXfQA5cWWXBdhZt/ixz4skcDqJxyOj+Uwt+Be/DU9jtrbu5osb43mG
+wWcpc1cyA1ndHSPg+zTI5bwAfsbOiWIjm4dntRjiYlU9e5h1LYL35rlqaYsRdd3e
+UtjZD54gpzi31Em2Hn0zwtr95jhaA2KJ8VnPhQIDAQABAoIBAEmUUheIbPHs/eGw
+MtGsiUHqRo30sZUupxp1U8eHmo6SzFwqEVDkBjr8Yy+yN/PD7bHukMu5tyK5ZX1b
+gRG8RtbKFYu9F4tjL/TmYLSCDzPaKm0qxCBieYKsM0syJeoR5cCpb7kJtG0cr1v5
+fLxx0MqAKhk3fjV4jcDYUSiyA/rpm9Lf9D4nx/9SK20+DTQKpDYCyrRzL03DsiLz
+g/g1lwQl6cLcmEm/rGCcbcqXp7PZTn9HmW6OIrxrVsXj6PoyfiH1jjYZ/6mGkqaq
+sUSDCsvd9Or79JaXVKc/gqj7Lgrye1RqwnKJis1/7SygomvJ+dHH1sU/3pMcLwgZ
+vg2KydUCgYEA67xaSmENwz0dXQR+1fw6KJfOLg2+naKqv5z3rEp9hdWkDR8Oaa6d
+VLJPdAyyksbquPwLrTBYGr1i0k5Gd2DlBuQbG0N9IlqwprNMKiZUyWazwB2vLl4j
+XszUksJmyoP56Xu+dz/wzd2zRTncXaKDPKMXRWSXSMI5JgBmnUSRYD8CgYEA0Gi2
+YhVd8xXhokLpPgKS0P5cXKOPQjOnvwvFx5kf66rdMIjFv2nd9AvzfgOZA3XW3pqM
+MYKOH00/zj9X+c9nodDi1+iFngf8J0YCqH/74k2x0BHsNZ791N8dnGNB1YlbqkFR
+NEMWNATTtngCaPaMB1Cm2u2bRv7naYR1ZbqPHzsCgYADQVmZ11dCT/C83RgHSnFf
+KCF/v07XjGyBMuC0r16mX3nheIFRckjX55JzTs2Ue0y4ezqKDLXawKzBrLUKZvsi
+qjm5maf7tnbkBmvR1S+sjE+FIqPNpx0j7P4ufKLAvyvPTpclvGtN3HbiSNdDL8BS
+MQpcOfRg29XAMZc5Kr47LwKBgQCrtIoHV4lXHMEQecZHM8GYdOjN3mfKaFqdWWqy
+3yLgfJ7OPPGHmgam6i3LtdUcd7r3HifBJspHWdLm72NhSxMby8kJj+Z+ZB/Ij7Li
+9sclFVQZlJqjNwH0n3p6/YAhGZEvPa9Uuq0RYKS5YjjCF9cYs8c0+qyDGsK4Ocyr
+asA+PwKBgQDmpVScKxbLhkFsd6h/f4xgGb/pCtwszAdoSVBR2Vanziq1edNBRkvW
+KKwTODXtNiJZiMilvTMIi9r3F+H04zvQ0KPLucL7bXC2oZELeMK3NVytjVPmbWMg
+twFH+herroaEnXhrxitTc3cxG6eEWWTwUrf8STA33IuBnXM6Ki7q0Q==</private-key>
+      <public-key>MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv+l101cLBF6/qw0eEG/w
+AlFzGVSb0VcaKh9h2K/+G1azhtNMg2a4F2s7pyw+dCpGlS3Ntrs6WkC8/+Xm7d5S
+0ibxYMjdNke9Kn+iYQpmNSKsZg6+0TDu3WhweNjmDYH4OM0nhmhc55xIQwGq/RTj
+Z6JlgmUp1SK5TDLW4WA8HsAuXCP4rpQezkFR8LrXfQA5cWWXBdhZt/ixz4skcDqJ
+xyOj+Uwt+Be/DU9jtrbu5osb43mGwWcpc1cyA1ndHSPg+zTI5bwAfsbOiWIjm4dn
+tRjiYlU9e5h1LYL35rlqaYsRdd3eUtjZD54gpzi31Em2Hn0zwtr95jhaA2KJ8VnP
+hQIDAQAB</public-key>
+      <certificates>
+        <certificate>
+          <name>melacon_server_cert</name>
+          <cert>MIIDXDCCAkQCFEWJAHbqRJ7D6UmC0eL9hsl58fVmMA0GCSqGSIb3DQEBCwUAMIGM
+MQswCQYDVQQGEwJDWjEWMBQGA1UECAwNU291dGggTW9yYXZpYTENMAsGA1UEBwwE
+QnJubzEPMA0GA1UECgwGQ0VTTkVUMQwwCgYDVQQLDANUTUMxEzARBgNVBAMMCmV4
+YW1wbGUgQ0ExIjAgBgkqhkiG9w0BCQEWE2V4YW1wbGVjYUBsb2NhbGhvc3QwHhcN
+MjQwNjEzMTEzMDQwWhcNMjUxMDI2MTEzMDQwWjBIMQswCQYDVQQGEwJVUzELMAkG
+A1UECAwCQ0ExFjAUBgNVBAoMDU1lTGFDb24sIEluYy4xFDASBgNVBAMMC21lbGFj
+b24uY29tMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAv+l101cLBF6/
+qw0eEG/wAlFzGVSb0VcaKh9h2K/+G1azhtNMg2a4F2s7pyw+dCpGlS3Ntrs6WkC8
+/+Xm7d5S0ibxYMjdNke9Kn+iYQpmNSKsZg6+0TDu3WhweNjmDYH4OM0nhmhc55xI
+QwGq/RTjZ6JlgmUp1SK5TDLW4WA8HsAuXCP4rpQezkFR8LrXfQA5cWWXBdhZt/ix
+z4skcDqJxyOj+Uwt+Be/DU9jtrbu5osb43mGwWcpc1cyA1ndHSPg+zTI5bwAfsbO
+iWIjm4dntRjiYlU9e5h1LYL35rlqaYsRdd3eUtjZD54gpzi31Em2Hn0zwtr95jha
+A2KJ8VnPhQIDAQABMA0GCSqGSIb3DQEBCwUAA4IBAQCCGf7H7IGYDcmd8dhJod8m
+wzKuuvC+oW9/Ijk1zfFKDYruB+2yr1XlvUU5olaPAd44nTghssJSQFdSvyj5X2TT
+XpFXPf68nRtJxdOWEK2mo6K9VAl7KBcflC0AGz/XUZfMUSMvZZ3JRVlGmdgkIQmM
+O9YyLgpDjmWfl79olFtMd3od+MN8aaeiBnRNRD8eBE9pAWC5ycxCnELxTZACTFfW
+4DpUTS0KblA80HbRC/32ho3Qq7yKWcEQgSETZHt7al58BthezvFQYnWYcCgOTmYn
+wI72an5Zp5cG8zqZucyAVWZjRmToenozkQhRogLvJXz9xrqAaue/OSDkR3f+N9gf</cert>
+        </certificate>
+      </certificates>
+    </asymmetric-key>
+  </asymmetric-keys>
+</keystore>
+<truststore xmlns="urn:ietf:params:xml:ns:yang:ietf-truststore">
+  <certificates>
+    <name>clientcerts</name>
+    <certificate>
+      <name>clientcert</name>
+      <cert>MIIECTCCAvGgAwIBAgIBBzANBgkqhkiG9w0BAQsFADCBjDELMAkGA1UEBhMCQ1ox
+FjAUBgNVBAgMDVNvdXRoIE1vcmF2aWExDTALBgNVBAcMBEJybm8xDzANBgNVBAoM
+BkNFU05FVDEMMAoGA1UECwwDVE1DMRMwEQYDVQQDDApleGFtcGxlIENBMSIwIAYJ
+KoZIhvcNAQkBFhNleGFtcGxlY2FAbG9jYWxob3N0MB4XDTE1MDczMDA3MjcxOFoX
+DTM1MDcyNTA3MjcxOFowgYUxCzAJBgNVBAYTAkNaMRYwFAYDVQQIDA1Tb3V0aCBN
+b3JhdmlhMQ8wDQYDVQQKDAZDRVNORVQxDDAKBgNVBAsMA1RNQzEXMBUGA1UEAwwO
+ZXhhbXBsZSBjbGllbnQxJjAkBgkqhkiG9w0BCQEWF2V4YW1wbGVjbGllbnRAbG9j
+YWxob3N0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAueCQaNQWoNmF
+K6LKu1p8U8ZWdWg/PvDdLsJyzfzl/Qw4UA68SfFNaY06zZl8QB9W02nr5kWeeMY0
+VA3adrPgOlvfx3oWlFbkETnMaN4OT3WTQ0Wt6jAWZDzVfopwpJPAzRPxACDftIqF
+GagYcF32hZlVNqqnVdbXh0S0EViweqp/dbG4VDUHSNVbglc+u4UbEzNIFXMdEFsJ
+ZpkynOmSiTsIATqIhb+2srkVgLwhfkC2qkuHQwAHdubuB07ObM2z01UhyEdDvEYG
+HwtYAGDBL2TAcsI0oGeVkRyuOkV0QY0UN7UEFI1yTYw+xZ42HgFx3uGwApCImxhb
+j69GBYWFqwIDAQABo3sweTAJBgNVHRMEAjAAMCwGCWCGSAGG+EIBDQQfFh1PcGVu
+U1NMIEdlbmVyYXRlZCBDZXJ0aWZpY2F0ZTAdBgNVHQ4EFgQUXGpLeLnh2cSDARAV
+A7KrBxGYpo8wHwYDVR0jBBgwFoAUc1YQIqjZsHVwlea0AB4N+ilNI2gwDQYJKoZI
+hvcNAQELBQADggEBAJPV3RTXFRtNyOU4rjPpYeBAIAFp2aqGc4t2J1c7oPp/1n+l
+ZvjnwtlJpZHxMM783e2ryDQ6dkvXDf8kpwKlg3U3mkJ3xKkDdWrM4QwghXdCN519
+aa9qmu0zdFL+jUAaWlQ5tsceOrvbusCcbMqiFGk/QfpHqPv52SVWbYyUx7IX7DE+
+UjgsLHycfV/tlcx4ZE6soTzl9VdgSL/zmzG3rjsr58J80rXckLgBhvijgBlIAJvW
+fC7D0vaouvBInSFXymdPVoUDZ30cdGLf+hI/i/TfsEMOinLrXVdkSGNo6FXAHKSv
+XeB9oFKSzhQ7OPyRyqvEPycUSw/qD6FVr80oDDc=</cert>
+    </certificate>
+  </certificates>
+  <certificates>
+    <name>cacerts</name>
+    <certificate>
+      <name>cacert</name>
+      <cert>MIID7TCCAtWgAwIBAgIJAMtE1NGAR5KoMA0GCSqGSIb3DQEBBQUAMIGMMQswCQYD
+VQQGEwJDWjEWMBQGA1UECAwNU291dGggTW9yYXZpYTENMAsGA1UEBwwEQnJubzEP
+MA0GA1UECgwGQ0VTTkVUMQwwCgYDVQQLDANUTUMxEzARBgNVBAMMCmV4YW1wbGUg
+Q0ExIjAgBgkqhkiG9w0BCQEWE2V4YW1wbGVjYUBsb2NhbGhvc3QwHhcNMTQwNzI0
+MTQxOTAyWhcNMjQwNzIxMTQxOTAyWjCBjDELMAkGA1UEBhMCQ1oxFjAUBgNVBAgM
+DVNvdXRoIE1vcmF2aWExDTALBgNVBAcMBEJybm8xDzANBgNVBAoMBkNFU05FVDEM
+MAoGA1UECwwDVE1DMRMwEQYDVQQDDApleGFtcGxlIENBMSIwIAYJKoZIhvcNAQkB
+FhNleGFtcGxlY2FAbG9jYWxob3N0MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIB
+CgKCAQEArD3TDHPAMT2Z84orK4lMlarbgooIUCcRZyLe+QM+8KY8Hn+mGaxPEOTS
+L3ywszqefB/Utm2hPKLHX684iRC14ID9WDGHxPjvoPArhgFhfV+qnPfxKTgxZC12
+uOj4u1V9y+SkTCocFbRfXVBGpojrBuDHXkDMDEWNvr8/52YCv7bGaiBwUHolcLCU
+bmtKILCG0RNJyTaJpXQdAeq5Z1SJotpbfYFFtAXB32hVoLug1dzl2tjG9sb1wq3Q
+aDExcbC5w6P65qOkNoyym9ne6QlQagCqVDyFn3vcqkRaTjvZmxauCeUxXgJoXkyW
+cm0lM1KMHdoTArmchw2Dz0yHHSyDAQIDAQABo1AwTjAdBgNVHQ4EFgQUc1YQIqjZ
+sHVwlea0AB4N+ilNI2gwHwYDVR0jBBgwFoAUc1YQIqjZsHVwlea0AB4N+ilNI2gw
+DAYDVR0TBAUwAwEB/zANBgkqhkiG9w0BAQUFAAOCAQEAI/1KH60qnw9Xs2RGfi0/
+IKf5EynXt4bQX8EIyVKwSkYKe04zZxYfLIl/Q2HOPYoFmm3daj5ddr0ZS1i4p4fT
+UhstjsYWvXs3W/HhVmFUslakkn3PrswhP77fCk6eEJLxdfyJ1C7Uudq2m1isZbKi
+h+XF0mG1LxJaDMocSz4eAya7M5brwjy8DoOmA1TnLQFCVcpn+sCr7VC4wE/JqxyV
+hBCk/MuGqqM3B1j90bGFZ112ZOecyE0EDSr6IbiRBtmeNbEwOFjKXhNLYdxpBZ9D
+8A/368OckZkCrVLGuJNxK9UwCVTe8IhotHUqU9EqFDmxdV8oIdU/OzUwwNPA/Bd/
+9g==</cert>
+    </certificate>
+  </certificates>
+</truststore>
+<netconf-server xmlns="urn:ietf:params:xml:ns:yang:ietf-netconf-server">
+  <listen>
+    <endpoint>
+      <name>mng-tls-0</name>
+      <tls>
+        <tcp-server-parameters>
+          <local-address>::</local-address>
+          <local-port>830</local-port>
+          <keepalives>
+            <idle-time>1</idle-time>
+            <max-probes>10</max-probes>
+            <probe-interval>5</probe-interval>
+          </keepalives>
+        </tcp-server-parameters>
+        <tls-server-parameters>
+          <server-identity>
+            <keystore-reference>
+              <asymmetric-key>melacon_server_key</asymmetric-key>
+              <certificate>melacon_server_cert</certificate>
+            </keystore-reference>
+          </server-identity>
+          <client-authentication>
+            <required/>
+            <ca-certs>cacerts</ca-certs>
+            <client-certs>clientcerts</client-certs>
+            <cert-maps>
+              <cert-to-name>
+                <id>1</id>
+                <fingerprint>02:E9:38:1F:F6:8B:62:DE:0A:0B:C5:03:81:A8:03:49:A0:00:7F:8B:F3</fingerprint>
+                <map-type xmlns:x509c2n="urn:ietf:params:xml:ns:yang:ietf-x509-cert-to-name">x509c2n:specified</map-type>
+                <name>netconf</name>
+              </cert-to-name>
+            </cert-maps>
+          </client-authentication>
+        </tls-server-parameters>
+      </tls>
+    </endpoint>
+    <endpoint>
+      <name>manger-tls-internal</name>
+      <tls>
+        <tcp-server-parameters>
+          <local-address>::</local-address>
+          <local-port>800</local-port>
+          <keepalives>
+            <idle-time>1</idle-time>
+            <max-probes>10</max-probes>
+            <probe-interval>5</probe-interval>
+          </keepalives>
+        </tcp-server-parameters>
+        <tls-server-parameters>
+          <server-identity>
+            <keystore-reference>
+              <asymmetric-key>melacon_server_key</asymmetric-key>
+              <certificate>melacon_server_cert</certificate>
+            </keystore-reference>
+          </server-identity>
+          <client-authentication>
+            <required/>
+            <ca-certs>cacerts</ca-certs>
+            <client-certs>clientcerts</client-certs>
+            <cert-maps>
+              <cert-to-name>
+                <id>1</id>
+                <fingerprint>02:E9:38:1F:F6:8B:62:DE:0A:0B:C5:03:81:A8:03:49:A0:00:7F:8B:F3</fingerprint>
+                <map-type xmlns:x509c2n="urn:ietf:params:xml:ns:yang:ietf-x509-cert-to-name">x509c2n:specified</map-type>
+                <name>netconf</name>
+              </cert-to-name>
+            </cert-maps>
+          </client-authentication>
+        </tls-server-parameters>
+      </tls>
+    </endpoint>
+  </listen>
+  <call-home>
+    <netconf-client>
+      <name>default-client</name>
+      <endpoints>
+        <endpoint>
+          <name>callhome-tls</name>
+          <tls>
+            <tcp-client-parameters>
+              <keepalives>
+                <idle-time>1</idle-time>
+                <max-probes>10</max-probes>
+                <probe-interval>5</probe-interval>
+              </keepalives>
+              <remote-address>192.168.128.101</remote-address>
+              <remote-port>4334</remote-port>
+            </tcp-client-parameters>
+            <tls-server-parameters>
+              <server-identity>
+                <keystore-reference>
+                  <asymmetric-key>melacon_server_key</asymmetric-key>
+                  <certificate>melacon_server_cert</certificate>
+                </keystore-reference>
+              </server-identity>
+              <client-authentication>
+                <required/>
+                <ca-certs>cacerts</ca-certs>
+                <client-certs>clientcerts</client-certs>
+                <cert-maps>
+                  <cert-to-name>
+                    <id>1</id>
+                    <fingerprint>02:E9:38:1F:F6:8B:62:DE:0A:0B:C5:03:81:A8:03:49:A0:00:7F:8B:F3</fingerprint>
+                    <map-type xmlns:x509c2n="urn:ietf:params:xml:ns:yang:ietf-x509-cert-to-name">x509c2n:specified</map-type>
+                    <name>netconf</name>
+                  </cert-to-name>
+                </cert-maps>
+              </client-authentication>
+            </tls-server-parameters>
+          </tls>
+        </endpoint>
+      </endpoints>
+      <connection-type>
+        <persistent/>
+      </connection-type>
+    </netconf-client>
+  </call-home>
+</netconf-server>
+<system xmlns="urn:ietf:params:xml:ns:yang:ietf-system">
+  <clock>
+    <timezone-name>UTC</timezone-name>
+  </clock>
+  <name xmlns="urn:onap:system">O-RU-11223</name>
+  <web-ui xmlns="urn:onap:system">http://[2001:db8:1:50::23]:8181/odlux/index.html#/configuration/O-RU-11223</web-ui>
+  <contact>O-RAN-SC SIM project</contact>
+  <hostname>O-RU-11223</hostname>
+  <location>Open Wireless Lab</location>
+  <ntp>
+    <enabled>false</enabled>
+  </ntp>
+</system>
+<simulation xmlns="urn:o-ran-sc:params:xml:ns:yang:nts:network:function">
+  <network-function>
+    <mount-point-addressing-method>docker-mapping</mount-point-addressing-method>
+    <fault-generation/>
+    <netconf/>
+    <ves/>
+    <function-type>NTS_FUNCTION_TYPE_O_RAN_O_RU_FH</function-type>
+  </network-function>
+  <network-emulation>
+    <limit>1000</limit>
+    <delay>
+      <time>0</time>
+      <jitter>0</jitter>
+      <correlation>0</correlation>
+      <distribution>normal</distribution>
+    </delay>
+    <corruption>
+      <percentage>0</percentage>
+      <correlation>0</correlation>
+    </corruption>
+    <duplication>
+      <percentage>0</percentage>
+      <correlation>0</correlation>
+    </duplication>
+    <reordering>
+      <percentage>0</percentage>
+      <correlation>0</correlation>
+    </reordering>
+    <loss>0</loss>
+    <rate>0</rate>
+  </network-emulation>
+  <sdn-controller>
+    <controller-protocol>http</controller-protocol>
+    <controller-ip>2001:db8:1:50::23</controller-ip>
+    <controller-port>8181</controller-port>
+    <controller-netconf-call-home-ip>2001:db8:1:50::23</controller-netconf-call-home-ip>
+    <controller-netconf-call-home-port>4335</controller-netconf-call-home-port>
+    <controller-username>admin</controller-username>
+    <controller-password>admin</controller-password>
+  </sdn-controller>
+  <ves-endpoint>
+    <ves-endpoint-protocol>https</ves-endpoint-protocol>
+    <ves-endpoint-auth-method>basic-auth</ves-endpoint-auth-method>
+    <ves-endpoint-ip>2001:db8:1:50::27</ves-endpoint-ip>
+    <ves-endpoint-port>8443</ves-endpoint-port>
+    <ves-endpoint-username>sample1</ves-endpoint-username>
+    <ves-endpoint-password>sample1</ves-endpoint-password>
+  </ves-endpoint>
+</simulation>
+<module-capability xmlns="urn:o-ran:module-cap:1.0">
+  <rw-sub-band-info>
+    <rw-number-of-laa-scarriers>159</rw-number-of-laa-scarriers>
+    <rw-self-configure>true</rw-self-configure>
+  </rw-sub-band-info>
+</module-capability>
+<interfaces xmlns="urn:ietf:params:xml:ns:yang:ietf-interfaces">
+  <interface>
+    <name>d3ea2f17-a841-4e71-9ef9-9549159aabe7</name>
+    <description>Simulated interface for O-RU</description>
+    <type xmlns:ianaift="urn:ietf:params:xml:ns:yang:iana-if-type">ianaift:ethernetCsmacd</type>
+    <enabled>true</enabled>
+    <link-up-down-trap-enable>disabled</link-up-down-trap-enable>
+    <ipv4 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+      <enabled>false</enabled>
+      <forwarding>false</forwarding>
+      <mtu>42783</mtu>
+      <address>
+        <ip>6.122.172.49</ip>
+        <prefix-length>14</prefix-length>
+      </address>
+      <address>
+        <ip>206.35.59.57</ip>
+        <netmask>199.41.255.188</netmask>
+      </address>
+      <neighbor>
+        <ip>48.159.72.129</ip>
+        <link-layer-address>42:8f:12:23:03:d3</link-layer-address>
+      </neighbor>
+      <neighbor>
+        <ip>187.230.45.63</ip>
+        <link-layer-address>77:b5:38:45:08:be</link-layer-address>
+      </neighbor>
+      <m-plane-marking xmlns="urn:o-ran:interfaces:1.0">13</m-plane-marking>
+      <diffserv-markings xmlns="urn:o-ran:interfaces:1.0">
+        <u-plane-marking>38</u-plane-marking>
+        <c-plane-marking>16</c-plane-marking>
+        <s-plane-marking>62</s-plane-marking>
+        <other-marking>27</other-marking>
+        <enhanced-uplane-markings>
+          <up-marking-name>X5f0ExbIx4jg5fpd9c0wiOEJbCXzpYxe3M7AkiaRnlZsAgxCsx0LlFmwhk6yavM5iTFu4Idr3cTwtj0NQ0ycFVAO7ymh41meM2IQCNhFZ33km30c4ygJlRqshMJlFYrsS1iuOs1Gv5SJ8SNcr4WENm740IiyGJ0qLaUrCW7Z10A9SombsaQ7oPboptWYdOoQRjhl7hl8hV91bv5vxNCVuOcTh0RmP84Grm1qD</up-marking-name>
+          <enhanced-marking>21</enhanced-marking>
+        </enhanced-uplane-markings>
+        <enhanced-uplane-markings>
+          <up-marking-name>2zF55KBup</up-marking-name>
+          <enhanced-marking>5</enhanced-marking>
+        </enhanced-uplane-markings>
+      </diffserv-markings>
+    </ipv4>
+    <ipv6 xmlns="urn:ietf:params:xml:ns:yang:ietf-ip">
+      <enabled>true</enabled>
+      <forwarding>true</forwarding>
+      <mtu>1163652863</mtu>
+      <address>
+        <ip>ea87:d264:da5e:5b19:4713:7266:f91e:14f7</ip>
+        <prefix-length>124</prefix-length>
+      </address>
+      <address>
+        <ip>2853:6b9:c531:f3c1:6875:f55:17ea:157b</ip>
+        <prefix-length>65</prefix-length>
+      </address>
+      <neighbor>
+        <ip>e6ae:4eeb:25c8:4ce6:9a7:5c2c:4293:f42e</ip>
+        <link-layer-address>65:58:a4:47:f1:91</link-layer-address>
+      </neighbor>
+      <neighbor>
+        <ip>f88d:e8e9:8f68:ff46:ae1a:8329:67bc:bd6f</ip>
+        <link-layer-address>32:d7:a9:c1:37:14</link-layer-address>
+      </neighbor>
+      <dup-addr-detect-transmits>1225514618</dup-addr-detect-transmits>
+      <autoconf>
+        <create-global-addresses>true</create-global-addresses>
+        <create-temporary-addresses>true</create-temporary-addresses>
+        <temporary-valid-lifetime>2335597472</temporary-valid-lifetime>
+        <temporary-preferred-lifetime>922813230</temporary-preferred-lifetime>
+      </autoconf>
+      <m-plane-marking xmlns="urn:o-ran:interfaces:1.0">33</m-plane-marking>
+      <diffserv-markings xmlns="urn:o-ran:interfaces:1.0">
+        <u-plane-marking>29</u-plane-marking>
+        <c-plane-marking>50</c-plane-marking>
+        <s-plane-marking>14</s-plane-marking>
+        <other-marking>61</other-marking>
+        <enhanced-uplane-markings>
+          <up-marking-name>8iROcw05EJqk0qe08RerP</up-marking-name>
+          <enhanced-marking>18</enhanced-marking>
+        </enhanced-uplane-markings>
+        <enhanced-uplane-markings>
+          <up-marking-name>M14steKtoB9s09xEKPYLf4LfWZHDetPSuUkP05bgykIym746WUR3ZCjVuSqIlgAI2Nx2KIiaV0Bh7xnVs7YjB965TwF7E8PGVeAxPSHKKaTJI8w2fnlRwjWqPuxmCe2xsDWhnvT0GMBoV8i2vDTTOIbvcAROOUd9p9qMEcEcYgsLgKODfzw3hAzlaq9Zce8BfqgUCUYt2r6abMNrmcuDMVZWm0Nq7N2m6a8IW73Zy21BOP2aTpGxkxlyp9ZwO</up-marking-name>
+          <enhanced-marking>29</enhanced-marking>
+        </enhanced-uplane-markings>
+      </diffserv-markings>
+    </ipv6>
+    <alias-macs xmlns="urn:o-ran:interfaces:1.0">b2:24:6a:90:68:bb</alias-macs>
+    <alias-macs xmlns="urn:o-ran:interfaces:1.0">ba:33:50:5b:58:f7</alias-macs>
+    <mac-address xmlns="urn:o-ran:interfaces:1.0">2c:2b:1f:8c:3f:a2</mac-address>
+    <port-reference xmlns="urn:o-ran:interfaces:1.0">
+      <port-number>113</port-number>
+    </port-reference>
+    <l2-mtu xmlns="urn:o-ran:interfaces:1.0">60489</l2-mtu>
+    <vlan-tagging xmlns="urn:o-ran:interfaces:1.0">true</vlan-tagging>
+    <class-of-service xmlns="urn:o-ran:interfaces:1.0">
+      <u-plane-marking>3</u-plane-marking>
+      <c-plane-marking>0</c-plane-marking>
+      <m-plane-marking>1</m-plane-marking>
+      <s-plane-marking>6</s-plane-marking>
+      <other-marking>4</other-marking>
+      <enhanced-uplane-markings>
+        <up-marking-name>dtSbiQU8fgixwU6tOQNLIc1PPuz2LFeQ862rPWr44JtAvzVbi</up-marking-name>
+        <enhanced-marking>5</enhanced-marking>
+      </enhanced-uplane-markings>
+      <enhanced-uplane-markings>
+        <up-marking-name>MQHBk8vYNCGOII7pwymAaP2xhPJrxxjcn1NA9bqPN6D</up-marking-name>
+        <enhanced-marking>2</enhanced-marking>
+      </enhanced-uplane-markings>
+    </class-of-service>
+  </interface>
+</interfaces>
+<hardware xmlns="urn:ietf:params:xml:ns:yang:ietf-hardware">
+  <component>
+    <name>chassis</name>
+    <alias>chassis</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:chassis</class>
+    <state>
+      <admin-state>unlocked</admin-state>
+    </state>
+  </component>
+  <component>
+    <name>chassis-temperature-exhaust</name>
+    <alias>chassis-temperature-exhaust</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:sensor</class>
+    <state>
+      <admin-state>locked</admin-state>
+    </state>
+    <parent>chassis</parent>
+    <parent-rel-pos>0</parent-rel-pos>
+  </component>
+  <component>
+    <name>chassis-temperature-inlet</name>
+    <alias>chassis-temperature-inlet</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:sensor</class>
+    <state>
+      <admin-state>locked</admin-state>
+    </state>
+    <parent>chassis</parent>
+    <parent-rel-pos>1</parent-rel-pos>
+  </component>
+  <component>
+    <name>chassis-fan0</name>
+    <alias>chassis-fan0</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:fan</class>
+    <state>
+      <admin-state>locked</admin-state>
+    </state>
+    <parent>chassis</parent>
+    <parent-rel-pos>2</parent-rel-pos>
+  </component>
+  <component>
+    <name>chassis-fan0-speed</name>
+    <alias>chassis-fan0-speed</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:sensor</class>
+    <state>
+      <admin-state>locked</admin-state>
+    </state>
+    <parent>chassis-fan0</parent>
+    <parent-rel-pos>0</parent-rel-pos>
+  </component>
+  <component>
+    <name>chassis-fan1</name>
+    <alias>chassis-fan1</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:fan</class>
+    <state>
+      <admin-state>locked</admin-state>
+    </state>
+    <parent>chassis</parent>
+    <parent-rel-pos>3</parent-rel-pos>
+  </component>
+  <component>
+    <name>chassis-fan1-speed</name>
+    <alias>chassis-fan1-speed</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:sensor</class>
+    <state>
+      <admin-state>locked</admin-state>
+    </state>
+    <parent>chassis-fan1</parent>
+    <parent-rel-pos>0</parent-rel-pos>
+  </component>
+  <component>
+    <name>chassis-fan2</name>
+    <alias>chassis-fan2</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:fan</class>
+    <state>
+      <admin-state>locked</admin-state>
+    </state>
+    <parent>chassis</parent>
+    <parent-rel-pos>4</parent-rel-pos>
+  </component>
+  <component>
+    <name>chassis-fan2-speed</name>
+    <alias>chassis-fan2-speed</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:sensor</class>
+    <state>
+      <admin-state>locked</admin-state>
+    </state>
+    <parent>chassis-fan2</parent>
+    <parent-rel-pos>0</parent-rel-pos>
+  </component>
+  <component>
+    <name>chassis-fan3</name>
+    <alias>chassis-fan3</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:fan</class>
+    <state>
+      <admin-state>locked</admin-state>
+    </state>
+    <parent>chassis</parent>
+    <parent-rel-pos>5</parent-rel-pos>
+  </component>
+  <component>
+    <name>chassis-fan3-speed</name>
+    <alias>chassis-fan3-speed</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:sensor</class>
+    <state>
+      <admin-state>locked</admin-state>
+    </state>
+    <parent>chassis-fan3</parent>
+    <parent-rel-pos>0</parent-rel-pos>
+  </component>
+  <component>
+    <name>cpu</name>
+    <alias>cpu</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:cpu</class>
+    <state>
+      <admin-state>locked</admin-state>
+    </state>
+    <parent>chassis</parent>
+    <parent-rel-pos>6</parent-rel-pos>
+  </component>
+  <component>
+    <name>cpu-temperature</name>
+    <alias>cpu-temperature</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:sensor</class>
+    <state>
+      <admin-state>locked</admin-state>
+    </state>
+    <parent>cpu</parent>
+    <parent-rel-pos>0</parent-rel-pos>
+  </component>
+  <component>
+    <name>slot0</name>
+    <alias>slot0</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:module</class>
+    <state>
+      <admin-state>unlocked</admin-state>
+    </state>
+    <parent>chassis</parent>
+    <parent-rel-pos>7</parent-rel-pos>
+  </component>
+  <component>
+    <name>slot0-temperature</name>
+    <alias>slot0-temperature</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:sensor</class>
+    <state>
+      <admin-state>locked</admin-state>
+    </state>
+    <parent>slot0</parent>
+    <parent-rel-pos>0</parent-rel-pos>
+  </component>
+  <component>
+    <name>slot0-logical0</name>
+    <alias>Slot0-A</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:module</class>
+    <state>
+      <admin-state>unlocked</admin-state>
+    </state>
+    <parent>slot0</parent>
+    <parent-rel-pos>1</parent-rel-pos>
+  </component>
+  <component>
+    <name>slot0-logical0-bbu</name>
+    <alias>Slot0-A-bbu</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:port</class>
+    <state>
+      <admin-state>unlocked</admin-state>
+    </state>
+    <parent>slot0-logical0</parent>
+    <parent-rel-pos>0</parent-rel-pos>
+    <o-ran-name xmlns="urn:o-ran:hardware:1.0">slot0-logical0-bbu</o-ran-name>
+  </component>
+  <component>
+    <name>slot0-logical0-bbu-temperature</name>
+    <alias>Slot0-A-bbu-temperature</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:sensor</class>
+    <state>
+      <admin-state>locked</admin-state>
+    </state>
+    <parent>slot0-logical0-bbu</parent>
+    <parent-rel-pos>0</parent-rel-pos>
+  </component>
+  <component>
+    <name>slot0-logical0-rrh</name>
+    <alias>Slot0-A-rrh</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:port</class>
+    <state>
+      <admin-state>unlocked</admin-state>
+    </state>
+    <parent>slot0-logical0</parent>
+    <parent-rel-pos>1</parent-rel-pos>
+    <o-ran-name xmlns="urn:o-ran:hardware:1.0">slot0-logical0-rrh</o-ran-name>
+  </component>
+  <component>
+    <name>slot0-logical0-rrh-temperature</name>
+    <alias>Slot0-A-rrh-temperature</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:sensor</class>
+    <state>
+      <admin-state>locked</admin-state>
+    </state>
+    <parent>slot0-logical0-rrh</parent>
+    <parent-rel-pos>0</parent-rel-pos>
+  </component>
+  <component>
+    <name>slot0-logical1</name>
+    <alias>Slot0-B</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:module</class>
+    <state>
+      <admin-state>unlocked</admin-state>
+    </state>
+    <parent>slot0</parent>
+    <parent-rel-pos>2</parent-rel-pos>
+  </component>
+  <component>
+    <name>slot0-logical2</name>
+    <alias>Slot0-C</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:module</class>
+    <state>
+      <admin-state>unlocked</admin-state>
+    </state>
+    <parent>slot0</parent>
+    <parent-rel-pos>3</parent-rel-pos>
+  </component>
+  <component>
+    <name>slot2</name>
+    <alias>slot2</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:module</class>
+    <state>
+      <admin-state>unlocked</admin-state>
+    </state>
+    <parent>chassis</parent>
+    <parent-rel-pos>9</parent-rel-pos>
+  </component>
+  <component>
+    <name>slot2-temperature</name>
+    <alias>slot2-temperature</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:sensor</class>
+    <state>
+      <admin-state>locked</admin-state>
+    </state>
+    <parent>slot2</parent>
+    <parent-rel-pos>0</parent-rel-pos>
+  </component>
+  <component>
+    <name>slot2-logical0</name>
+    <alias>Slot2-C</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:module</class>
+    <state>
+      <admin-state>unlocked</admin-state>
+    </state>
+    <parent>slot2</parent>
+    <parent-rel-pos>1</parent-rel-pos>
+  </component>
+  <component>
+    <name>slot2-logical1</name>
+    <alias>Slot3-A</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:module</class>
+    <state>
+      <admin-state>unlocked</admin-state>
+    </state>
+    <parent>slot2</parent>
+    <parent-rel-pos>2</parent-rel-pos>
+  </component>
+  <component>
+    <name>slot2-logical2</name>
+    <alias>Slot3-B</alias>
+    <class xmlns:ianahw="urn:ietf:params:xml:ns:yang:iana-hardware">ianahw:module</class>
+    <state>
+      <admin-state>unlocked</admin-state>
+    </state>
+    <parent>slot2</parent>
+    <parent-rel-pos>3</parent-rel-pos>
+  </component>
+</hardware>
+<md-data-definitions xmlns="urn:o-ran:lbm:1.0">
+  <maintenance-domain>
+    <id>hd083PMQ7QBKaobTrzna7Kv4ssy31V2a03iVKWDJNfmX</id>
+    <name>xI4Y575HC924z5Xn00nVijx7WgU3CJH1jDZgCXY6602yXSVPSiK2th9qqVt2w2WPyN62K49JWbhL34tNmd</name>
+    <md-level>0</md-level>
+  </maintenance-domain>
+  <maintenance-domain>
+    <id>80TJMl4uJ3NDbqufxsYFrZxwVWvzTytUymDkzHHiDmNOMiVcKTR3KozFd47YuAS2Onfo5OyAamoPEb1g4SkH8TedQlckNWfucmK9aiJkw712a2j6UvN3gU867kjV9qhlM1uWbd8IcaKec3kZy0UPU2N1fYOooXBaY56aa7SehuslyMkYMeFy</id>
+    <name>lswj8MI6nKWkJYuQIAZd2kDGFBlL9T2udqFm4fkr08DB77rPzi2BCFi99DVaoPwC8bQcr2wja9Uh9d7Iv1c7zu9AZ4KfTgJ1jzeCtKVELHVUUUDhOPhfbqP2urhfz1hSsnvWZisK0f</name>
+    <md-level>2</md-level>
+  </maintenance-domain>
+</md-data-definitions>
+<external-io xmlns="urn:o-ran:external-io:1.0">
+  <output-setting>
+    <name>76ILmyPIX1hN1nU6CF4MbsbcqiC0XiP4opHCXwdNxusyJmFmTJ844b8mlKfiU4njl4Nit05Snxj6LYsEzsAvDJSZl79g3wroteyOfEGu3ZAPPVlhnWETxwKSvT8qizGLOfrVT7pOZRDGMRX2N</name>
+    <line-out>true</line-out>
+  </output-setting>
+  <output-setting>
+    <name>oytH58GkRxLmNK7xlSyJSMW0SOaFiP5yfygkyOwpdaMSULqfDQQouFomtqTDfYcmpkHX0dfdnT69wop967p</name>
+    <line-out>false</line-out>
+  </output-setting>
+</external-io>
+<users xmlns="urn:o-ran:user-mgmt:1.0">
+  <user>
+    <name>oqdOIEnlkCM7nMwbDgHbUy1WdvBpn8tLrys95Pn</name>
+    <account-type>CERTIFICATE</account-type>
+    <password>1ae}6pJ.</password>
+    <enabled>true</enabled>
+  </user>
+  <user>
+    <name>Ribqu6YvU30wkfwO1XelZj2mJln8133Kd7bzd1WZXOnh4UXXJciInk4YFk6yf2ik9lMmfIdcpBttnrq6vAPSULJrXPZ4R9h0v3eKLsW2VhviANg5nXQ9Brsygjv0tMSYP7AsrovexSw8GE5VCNXdepDnJ8n4M72Beu</name>
+    <account-type>PASSWORD</account-type>
+    <password>X96gjD6lT</password>
+    <enabled>true</enabled>
+  </user>
+</users>
+<ecpri-delay-message xmlns="urn:o-ran:message5:1.0">
+  <enable-message5>false</enable-message5>
+  <message5-sessions>
+    <session-parameters>
+      <session-id>3052166380</session-id>
+    </session-parameters>
+    <session-parameters>
+      <session-id>3745905432</session-id>
+    </session-parameters>
+  </message5-sessions>
+</ecpri-delay-message>
+<supervision xmlns="urn:o-ran:supervision:1.0">
+  <event-collector-monitoring>
+    <heartbeat-interval>33</heartbeat-interval>
+    <heartbeat-recipient-id>47.124.137.222</heartbeat-recipient-id>
+    <heartbeat-recipient-id>135.159.64.237</heartbeat-recipient-id>
+  </event-collector-monitoring>
+  <cu-plane-monitoring>
+    <configured-cu-monitoring-interval>104</configured-cu-monitoring-interval>
+  </cu-plane-monitoring>
+</supervision>
+<udp-echo xmlns="urn:o-ran:udpecho:1.0">
+  <enable-udp-echo>true</enable-udp-echo>
+  <dscp-config>REFLECTIVE</dscp-config>
+</udp-echo>
+<ethernet-forwarding-table xmlns="urn:o-ran:ethernet-fwd:1.0">
+  <aging-time>4487178</aging-time>
+</ethernet-forwarding-table>
+<ald-ports-io xmlns="urn:o-ran:ald-port:1.0">
+  <ald-port-dc-control>
+    <name>21DejZYFEndBGsfjyNWczobMuOZp6gZ99unlme00BdB9FJt5wpi5OtKa9Bz8Rq9SVwdhKd9eiLnYmQ3S8dPWGrYI2pQLPZwKnJ10Pb67OtXac1Uk6B8N3YnXn5BcW7XbQQ3xT9FzvuJHnvTu7T92RwZetAipz7AiYEPJFmjaRUReqCIpvRrefisILD7</name>
+    <dc-enabled>false</dc-enabled>
+  </ald-port-dc-control>
+  <ald-port-dc-control>
+    <name>EJu5LbGtPA7PAYWvzFkybqFcp1HItY1ZHnXkqvFf5MWxKK2kqmKtNpG4qfEL5xDMUAYd</name>
+    <dc-enabled>false</dc-enabled>
+  </ald-port-dc-control>
+</ald-ports-io>
+<sync xmlns="urn:o-ran:sync:1.0">
+  <ptp-config>
+    <domain-number>207</domain-number>
+    <ptp-profile>G_8275_1</ptp-profile>
+    <delay-asymmetry>2014</delay-asymmetry>
+    <g-8275-1-config>
+      <multicast-mac-address>FORWARDABLE</multicast-mac-address>
+      <delay-asymmetry>-3885</delay-asymmetry>
+    </g-8275-1-config>
+    <accepted-clock-classes>
+      <clock-classes>28</clock-classes>
+    </accepted-clock-classes>
+    <accepted-clock-classes>
+      <clock-classes>123</clock-classes>
+    </accepted-clock-classes>
+  </ptp-config>
+  <ptp-status>
+    <reporting-period>29</reporting-period>
+  </ptp-status>
+  <synce-config>
+    <acceptance-list-of-ssm>ST3</acceptance-list-of-ssm>
+    <acceptance-list-of-ssm>PRC</acceptance-list-of-ssm>
+    <ssm-timeout>50999</ssm-timeout>
+  </synce-config>
+  <synce-status>
+    <reporting-period>50</reporting-period>
+  </synce-status>
+  <gnss-config>
+    <polarity>POSITIVE</polarity>
+    <cable-delay>27</cable-delay>
+    <anti-jam-enable>false</anti-jam-enable>
+    <enable>true</enable>
+    <satellite-constelation-list>GLONASS</satellite-constelation-list>
+    <satellite-constelation-list>GALILEO</satellite-constelation-list>
+  </gnss-config>
+  <gnss-status>
+    <reporting-period>244</reporting-period>
+  </gnss-status>
+</sync>
+<antenna-calibration xmlns="urn:o-ran:antcal:1.0">
+  <self-calibration-policy>
+    <self-calibration-allowed>false</self-calibration-allowed>
+    <coordinated-calibration-allowed>true</coordinated-calibration-allowed>
+  </self-calibration-policy>
+</antenna-calibration>
+<laa-config xmlns="urn:o-ran:laa:1.0">
+  <number-of-laa-scarriers>150</number-of-laa-scarriers>
+  <multi-carrier-type>B1</multi-carrier-type>
+  <multi-carrier-tx>false</multi-carrier-tx>
+  <laa-ending-dwpts-supported>false</laa-ending-dwpts-supported>
+  <laa-starting-in-second-slot-supported>true</laa-starting-in-second-slot-supported>
+</laa-config>
+<delay-management xmlns="urn:o-ran:delay:1.0">
+  <adaptive-delay-configuration>
+    <transport-delay>
+      <t12-min>1751316198</t12-min>
+      <t12-max>1834679576</t12-max>
+      <t34-min>4209342906</t34-min>
+      <t34-max>2005074088</t34-max>
+    </transport-delay>
+    <bandwidth-scs-delay-state>
+      <bandwidth>50000</bandwidth>
+      <subcarrier-spacing>149416</subcarrier-spacing>
+      <o-du-delay-profile>
+        <t1a-max-up>4198109582</t1a-max-up>
+        <tx-max>885874924</tx-max>
+        <ta4-max>4271284650</ta4-max>
+        <rx-max>897255128</rx-max>
+        <t1a-max-cp-dl>1329854572</t1a-max-cp-dl>
+      </o-du-delay-profile>
+    </bandwidth-scs-delay-state>
+    <bandwidth-scs-delay-state>
+      <bandwidth>60000</bandwidth>
+      <subcarrier-spacing>75795</subcarrier-spacing>
+      <o-du-delay-profile>
+        <t1a-max-up>3242759754</t1a-max-up>
+        <tx-max>2413818750</tx-max>
+        <ta4-max>2665852704</ta4-max>
+        <rx-max>3228775872</rx-max>
+        <t1a-max-cp-dl>174952374</t1a-max-cp-dl>
+      </o-du-delay-profile>
+    </bandwidth-scs-delay-state>
+  </adaptive-delay-configuration>
+  <bandwidth-scs-delay-state>
+    <bandwidth>30000</bandwidth>
+    <subcarrier-spacing>24809</subcarrier-spacing>
+  </bandwidth-scs-delay-state>
+  <bandwidth-scs-delay-state>
+    <bandwidth>100000</bandwidth>
+    <subcarrier-spacing>14179</subcarrier-spacing>
+  </bandwidth-scs-delay-state>
+</delay-management>
+<operational-info xmlns="urn:o-ran:operations:1.0">
+  <clock>
+    <timezone-utc-offset>391</timezone-utc-offset>
+    <timezone-name>XqFoiHID440uD7DHm0GopW7HE6EiPrqMRXb1wLF</timezone-name>
+  </clock>
+  <re-call-home-no-ssh-timer>48579</re-call-home-no-ssh-timer>
+</operational-info>
