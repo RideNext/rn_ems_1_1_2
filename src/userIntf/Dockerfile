@@ -56,7 +56,7 @@ COPY ./bin/run-script.sh /opt/bitnami/scripts/nginx/run.sh
 RUN chmod +x /opt/bitnami/nginx/sbin/run.sh \
               /opt/bitnami/nginx/sbin/opm.py \
               /opt/bitnami/scripts/nginx/run.sh && \
-    chmod -R g+w /opt/bitnami/nginx/html/tej-ems && \
+    chmod -R g+w /opt/bitnami/nginx/html/rn-ems && \
     mkdir -p /app/init.d && \
     chmod 666 /opt/bitnami/nginx/conf/server_blocks/*.* && \
     chown -R root:root /app && \

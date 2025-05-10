@@ -280,8 +280,8 @@ function buildSDNCWEB()
     cd ../framework
     yarn build:dev
 
-    mkdir -p  "${SDNC_WEB}/html/tej-ems" 
-    cd ${SDNC_WEB}/html/tej-ems
+    mkdir -p  "${SDNC_WEB}/html/rn-ems" 
+    cd ${SDNC_WEB}/html/rn-ems
     if [ $? -ne 0 ]; then
        echo " # -- SDNC_WEB COMPILATION FAILED -- # "
        exit 1
@@ -326,8 +326,8 @@ function copySdnrLib()
     nc=$(ls -lrt ${DOCK_LIB_DIR}/system/com/github/mwiede)
 
     ## SDNC_WEB="${COMP_DIR}/sdncWeb"
-    cp -arf  ${SDNC_WEB}/code/odlux/dist/*  ${SDNC_WEB}/html/tej-ems/
-    nc=$(ls -lrt ${SDNC_WEB}/html/tej-ems/*)
+    cp -arf  ${SDNC_WEB}/code/odlux/dist/*  ${SDNC_WEB}/html/rn-ems/
+    nc=$(ls -lrt ${SDNC_WEB}/html/rn-ems/*)
 
     echo "  "
     echo "DIR:  ${DOCK_LIB_DIR}/system: "
