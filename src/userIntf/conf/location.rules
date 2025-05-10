@@ -1,5 +1,5 @@
 location ~ ^/$  {
-    return 301 " /tej-ems/index.html";
+    return 301 " /RideNext-ems/index.html";
 }
 location ~ ^/help/$  {
     try_files /help/$args.json $uri;

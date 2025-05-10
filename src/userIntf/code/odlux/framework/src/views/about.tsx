@@ -110,7 +110,7 @@ const AboutComponent: FC = (props) => {
       const response2 = responses[1]; 
       const response3 = responses[2];   
       const content = response.status == 200 ? response.data : `${response.status} ${response.message}` || "Server error";
-      const content2 = `\n## Tejas EMS Version Info\n`+(response2.status == 200 ? getMarkOdluxVersionMarkdownTable(response2.data) : `${response2.message}` || "ODLUX Server error");
+      const content2 = `\n## RideNext EMS Version Info\n`+(response2.status == 200 ? getMarkOdluxVersionMarkdownTable(response2.data) : `${response2.message}` || "ODLUX Server error");
       const loadedSucessfully = response.status == 200 ? true : false;
       setContent((content) || null);
       setContentLoaded(loadedSucessfully);

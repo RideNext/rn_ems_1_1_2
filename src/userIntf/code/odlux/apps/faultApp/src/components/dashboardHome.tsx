@@ -421,7 +421,7 @@ class DashboardHome extends React.Component<HomeComponentProps>  {
     return (
       <>
         <div style={scrollbar} >
-          <h1 aria-label="welcome-to-odlux">Welcome to Tejas Networks EMS</h1>
+          <h1 aria-label="welcome-to-odlux">Welcome to RideNext EMS</h1>
           <div style={{ width: '38%', float: 'left' }}>
             {this.checkElementsAreLoaded() ?
               this.checkConnectionStatus() && connectionTotalCount != 0 ?
